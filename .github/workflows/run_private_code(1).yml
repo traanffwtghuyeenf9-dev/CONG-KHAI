@@ -32,6 +32,8 @@ jobs:
       CF_API_TOKEN:  ${{ secrets.CF_API_TOKEN }}
       CF_MODEL: "@cf/black-forest-labs/flux-1-schnell"
       CF_STEPS: "8"
+      
+      THUMB_FONT_FILE: UTM-Impact.ttf
 
     steps:
       - name: Checkout wrapper (repo PUBLIC)
