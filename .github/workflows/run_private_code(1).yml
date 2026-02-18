@@ -169,7 +169,12 @@ jobs:
           python -m pip install "torch==2.3.1" "torchaudio==2.3.1" --index-url https://download.pytorch.org/whl/cpu
           # Whisper (gói đúng tên: openai-whisper)
           python -m pip install --no-build-isolation "openai-whisper==20231117"
-          python -m pip install faster-whisper
+          # ===== THÊM TỪ ĐÂY: Faster-Whisper (chuẩn hơn) =====
+          python -m pip install "faster-whisper==1.2.1"
+          python -c "from faster_whisper import WhisperModel; print('faster-whisper OK')"
+          # Kiểm tra import (dùng python -c để tránh lỗi YAML here-doc)
+          python -c "import sys; import whisper, torch, torchaudio; print('Whisper/Torch OK:', whisper.__version__, torch.__version__)"
+
 
 
           # YAMNet (TensorFlow) để lọc nhạc
